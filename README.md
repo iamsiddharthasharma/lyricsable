@@ -1,5 +1,5 @@
 # Lyricsable
-Official Github Repo for Lyricsable
+
 
 The application will have a user interface where the user can input a phrase or a sentence. Upon submitting the phrase, the backend, built using the MERN stack, will process the input using natural language processing techniques.
 
