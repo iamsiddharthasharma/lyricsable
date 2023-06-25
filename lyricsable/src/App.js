@@ -20,10 +20,10 @@ function App() {
         },
       });
 
-      const hits = response.data.response.hits;
+      const hits = response.data;
       const songResults = hits.map((hit) => ({
-        title: hit.result.title,
-        artist: hit.result.primary_artist.name,
+        title: hit.title,
+        artist: hit.artist,
       }));
 
       setSongs(songResults);
