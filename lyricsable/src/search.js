@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     const { q } = req.query;
     const response = await axios.get('https://api.genius.com/search', {
       headers: {
-        Authorization: 'Bearer YOUR_ACCESS_TOKEN', // Replace with your actual access token
+        Authorization: 'oRsXMgO-UKGC0bPczbW5XJDQDpOn9478VbULsCJprhm4dkOQpQN5Xuwk3ylwwKzq', // Replace with your actual access token
       },
       params: {
         q,
