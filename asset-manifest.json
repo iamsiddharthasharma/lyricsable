@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/lyricsable/static/css/main.073c9b0a.css",
+    "main.js": "/lyricsable/static/js/main.7e8b6d25.js",
+    "static/js/787.75e2e8e0.chunk.js": "/lyricsable/static/js/787.75e2e8e0.chunk.js",
+    "static/media/logo.svg": "/lyricsable/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/lyricsable/index.html",
+    "main.073c9b0a.css.map": "/lyricsable/static/css/main.073c9b0a.css.map",
+    "main.7e8b6d25.js.map": "/lyricsable/static/js/main.7e8b6d25.js.map",
+    "787.75e2e8e0.chunk.js.map": "/lyricsable/static/js/787.75e2e8e0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.7e8b6d25.js"
+  ]
+}
