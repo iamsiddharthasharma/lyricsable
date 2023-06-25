@@ -11,7 +11,7 @@ function App() {
 
   const searchSongs = async () => {
     try {
-      const response = await axios.get('/api/search', {
+      const response = await axios.get('src/search', {
         headers: {
           Authorization: 'oRsXMgO-UKGC0bPczbW5XJDQDpOn9478VbULsCJprhm4dkOQpQN5Xuwk3ylwwKzq', // Replace with your actual access token
         },
