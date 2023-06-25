@@ -13,7 +13,7 @@ function App() {
     try {
       const response = await axios.get('https://api.genius.com/search', {
         headers: {
-          Authorization: 'MNOy0GRwwonuahUAdj1GmHTs4tsps6I4tRUReI_fGBF27P9BcxUEj0V-Xh6ENF-M', // Replace with your actual access token
+          Authorization: 'oRsXMgO-UKGC0bPczbW5XJDQDpOn9478VbULsCJprhm4dkOQpQN5Xuwk3ylwwKzq', // Replace with your actual access token
         },
         params: {
           q: lyricPhrase,
