@@ -12,24 +12,17 @@ function App() {
   const searchSongs = async () => {
     try {
       const response = await axios.get('src/search', {
-        headers: {
-          Authorization: 'oRsXMgO-UKGC0bPczbW5XJDQDpOn9478VbULsCJprhm4dkOQpQN5Xuwk3ylwwKzq', // Replace with your actual access token
-        },
         params: {
           q: lyricPhrase,
         },
       });
-      const songResults = response.data;
+      const hits = response.data;
+      const songResults = hits.map((hit) => ({
+        title: hit.title,
+        artist: hit.artist,
+      }));
 
-      if (Array.isArray(songResults)) {
-        const mappedSongs = songResults.map((song) => ({
-          title: song.title,
-          artist: song.artist,
-        }));
-        setSongs(mappedSongs);
-      } else {
-        console.error('Invalid response data format:', songResults);
-      }
+      setSongs(songResults);
     } catch (error) {
       console.error('Error searching for songs:', error);
     }
