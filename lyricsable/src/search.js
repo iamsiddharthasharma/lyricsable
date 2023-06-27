@@ -11,7 +11,7 @@ export default async function handler(req, res) {
         q,
       },
     });
-
+    console.log(response.data);
     const hits = response.data.response.hits;
     const songResults = hits.map((hit) => ({
       title: hit.result.title,
