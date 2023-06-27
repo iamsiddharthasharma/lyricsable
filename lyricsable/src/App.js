@@ -19,14 +19,17 @@ function App() {
           q: lyricPhrase,
         },
       });
-      console.log(response.data);
-      const hits = response.data;
-      const songResults = hits.map((hit) => ({
-        title: hit.title,
-        artist: hit.artist,
-      }));
+      const songResults = response.data;
 
-      setSongs(songResults);
+      if (Array.isArray(songResults)) {
+        const mappedSongs = songResults.map((song) => ({
+          title: song.title,
+          artist: song.artist,
+        }));
+        setSongs(mappedSongs);
+      } else {
+        console.error('Invalid response data format:', songResults);
+      }
     } catch (error) {
       console.error('Error searching for songs:', error);
     }
