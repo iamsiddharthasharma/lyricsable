@@ -17,9 +17,9 @@ function App() {
         },
       });
 
-      const songResults = response.data.songs.map((song) => ({
+      const songResults = response.data.map((song) => ({
         title: song.title,
-        artist: song.primary_artist.name,
+        artist: song.artist,
       }));
 
       setSongs(songResults);
