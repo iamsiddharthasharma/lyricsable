@@ -17,10 +17,9 @@ function App() {
         },
       });
 
-      const hits = response.data;
-      const songResults = hits.map((hit) => ({
-        title: hit.title,
-        artist: hit.artist,
+      const songResults = response.data.map((song) => ({
+        title: song.title,
+        artist: song.artist,
       }));
 
       setSongs(songResults);
