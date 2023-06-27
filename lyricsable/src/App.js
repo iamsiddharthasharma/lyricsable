@@ -16,6 +16,7 @@ function App() {
           q: lyricPhrase,
         },
       });
+      console.log(response.data);
       const hits = response.data;
       const songResults = hits.map((hit) => ({
         title: hit.title,
