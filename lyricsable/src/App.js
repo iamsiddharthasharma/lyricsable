@@ -20,12 +20,9 @@ function App() {
         },
       });
 
-      const songResults = response.data.map((song) => ({
-        title: song.title,
-        artist: song.artist,
-      }));
+      console.log(response.data); // Log the response data
 
-      setSongs(songResults);
+      setSongs(response.data);
     } catch (error) {
       console.error('Error searching for songs:', error);
     }
