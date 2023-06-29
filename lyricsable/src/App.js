@@ -20,9 +20,15 @@ function App() {
         },
       });
 
-      console.log(response.data); // Log the response data
-
-      setSongs(response.data);
+      if (response.data && response.data.response) {
+        const songResults = response.data.response.map((song) => ({
+          title: song.title,
+          artist: song.artist,
+        }));
+        setSongs(songResults);
+      } else {
+        console.log('Invalid response data:', response.data);
+      }
     } catch (error) {
       console.error('Error searching for songs:', error);
     }
@@ -30,7 +36,7 @@ function App() {
 
   return (
     <div>
-      <h1>Genius API Song Search</h1>
+      <h1>Song Search</h1>
       <input type="text" value={lyricPhrase} onChange={handleInputChange} />
       <button onClick={searchSongs}>Search</button>
 

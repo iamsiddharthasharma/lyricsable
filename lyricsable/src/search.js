@@ -12,16 +12,13 @@ export default async function handler(req, res) {
       },
     });
     
-    const hits = response.data?.response?.hits;
-    if (hits) {
-      const songResults = hits.map((hit) => ({
-        title: hit.result.title,
-        artist: hit.result.primary_artist.name,
-      }));
-      res.status(200).json(songResults);
-    } else {
-      res.status(200).json([]);
-    }
+    const hits = response.data.response.hits;
+    const songResults = hits.map((hit) => ({
+      title: hit.result.title,
+      artist: hit.result.primary_artist.name,
+    }));
+
+    res.status(200).json(songResults);
   } catch (error) {
     console.error('Error searching for songs:', error);
     res.status(500).json({ error: 'An error occurred while searching for songs' });
