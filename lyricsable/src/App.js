@@ -14,7 +14,7 @@ function App() {
     try {
       const response = await axios.get('/api/search', {
         headers: {
-          Authorization: 'oRsXMgO-UKGC0bPczbW5XJDQDpOn9478VbULsCJprhm4dkOQpQN5Xuwk3ylwwKzq', // Replace with your actual access token
+          Authorization: '9x5tnUTxs07G7EBwoL_GlQHBKZmkY86Tq0j-HoBjetbsdrR_7-5h8H3vPoxMancy', // Replace with your actual access token
         },
         params: {
           q: lyricPhrase,

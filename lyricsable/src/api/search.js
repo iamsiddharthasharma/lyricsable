@@ -3,9 +3,9 @@ const axios = require('axios');
 export default async function handler(req, res) {
   try {
     const { q } = req.query;
-    const response = await axios.get('https://api.genius.com/search/', {
+    const response = await axios.get('https://api.genius.com/search', {
       headers: {
-        Authorization: 'oRsXMgO-UKGC0bPczbW5XJDQDpOn9478VbULsCJprhm4dkOQpQN5Xuwk3ylwwKzq', // Replace with your actual access token
+        Authorization: '9x5tnUTxs07G7EBwoL_GlQHBKZmkY86Tq0j-HoBjetbsdrR_7-5h8H3vPoxMancy', // Replace with your actual access token
       },
       params: {
         q,
