@@ -4,6 +4,7 @@ import axios from 'axios';
 function App() {
   const [lyricPhrase, setLyricPhrase] = useState('');
   const [songs, setSongs] = useState([]);
+  const [error, setError] = useState(null);
 
   const handleInputChange = (e) => {
     setLyricPhrase(e.target.value);
@@ -11,7 +12,8 @@ function App() {
 
   const searchSongs = async () => {
     try {
-      const response = await axios.get('src/search', {
+      setError(null); // Clear any previous errors
+      const response = await axios.get('/api/search', {
         headers: {
           Authorization: 'oRsXMgO-UKGC0bPczbW5XJDQDpOn9478VbULsCJprhm4dkOQpQN5Xuwk3ylwwKzq', // Replace with your actual access token
         },
@@ -31,6 +33,7 @@ function App() {
       }
     } catch (error) {
       console.error('Error searching for songs:', error);
+      setError('An error occurred while searching for songs');
     }
   };
 
@@ -39,6 +42,8 @@ function App() {
       <h1>Song Search</h1>
       <input type="text" value={lyricPhrase} onChange={handleInputChange} />
       <button onClick={searchSongs}>Search</button>
+
+      {error && <p>{error}</p>}
 
       <ul>
         {songs.map((song, index) => (
