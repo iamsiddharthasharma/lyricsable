@@ -22,14 +22,15 @@ function App() {
         },
       });
 
-      if (response.data && response.data.response) {
-        const songResults = response.data.response.map((song) => ({
+      if (response.data && response.data.length > 0) {
+        const songResults = response.data.map((song) => ({
           title: song.title,
           artist: song.artist,
         }));
         setSongs(songResults);
       } else {
-        console.log('Invalid response data:', response.data);
+        console.log('No songs found');
+        setSongs([]); // Clear the songs state
       }
     } catch (error) {
       console.error('Error searching for songs:', error);
